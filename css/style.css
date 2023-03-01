@@ -1,0 +1,224 @@
+*,*::before,*::after{box-sizing:border-box}ul[class],ol[class]{padding:0}body,h1,h2,h3,h4,p,ul[class],ol[class],li,figure,figcaption,blockquote,dl,dd{margin:0}body{min-height:100vh;scroll-behavior:smooth;text-rendering:optimizeSpeed;line-height:1.5}ul[class],ol[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img{max-width:100%;}article > * + *{margin-top:1em}input,button,textarea,select{font:inherit}@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}}
+a{
+    text-decoration: none;
+}
+:root{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+}
+input {
+    all: unset;
+}
+@font-face {
+	font-family: 'SF Pro Display'; 
+	src: url(../fonts/SFPRODISPLAYREGULAR.OTF); 
+}
+*{
+  font-family: 'SF Pro Display', sans-serif;
+  font-style: normal;
+}
+.wrapper{
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height:100vh;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+
+
+
+
+.main{
+  width: 100%;
+  position: relative;
+}
+.form-file{
+  width: 100%;
+  max-width: 410px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.main h1{
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222222;
+  text-align: center;
+  padding: 11px 0 18px 0;
+  background: #F5F6FA;
+}
+.instruction{
+  display: flex;
+  align-items: center;
+  margin-top: 26px;
+  padding: 0 20px;
+}
+.instruction .instruction-side{
+  width: 100%;
+  max-width: 193px;
+  position: relative;
+}
+.instruction .instruction-side:first-child::after{
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #E9EEFC;
+}
+.instruction h2{
+  font-size: 1.5rem;
+  color: #222222;
+}
+.instruction p{
+  font-size: 1.4rem;
+  color: #7F8A95;
+  margin-top: 6px;
+}
+.instruction .instruction-side:first-child{
+  padding-right: 20px;
+}
+.instruction .instruction-side a{
+  color: #577BEC;
+  font-size: 1.4rem;
+  text-transform: lowercase;
+  font-weight: 400;
+  margin-left: 33px;
+  display: flex;
+  align-items: center;
+}
+.instruction .instruction-side a img{
+  margin-right: 3px;
+}
+#drop-zone {
+  margin-top: 24px;
+  width: 100%;
+  max-width: 410px;
+  min-height: 144px;
+  text-align: center;
+  position: relative;
+}
+#drop-zone input{
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  cursor: pointer;
+  z-index: 1;
+  left: 0;
+  opacity: 0;
+}
+.load-panel{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+}
+.load-failed, .load-successful, .load-progress{
+  display: none;
+  z-index: 2;
+}
+#drop-zone .load-start{
+  border: 1px dashed #E8E8E8;
+  transition: .3s ease;
+}
+#drop-zone .load-progress{
+  background-color: #EFF3FE;
+}
+#drop-zone .load-progress .load-text{
+  color: #577BEC;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+#drop-zone .load-start p{
+  color: #001737;
+  font-size: 1.6rem;
+}
+#drop-zone .load-start p span{
+  color: #577BEC;
+}
+#drop-zone .load-successful{
+  background-color: #e7f5ef;
+}
+#drop-zone .load-failed{
+  background-color: #FAE5E3;
+}
+.load-start.drag-over {
+  background-color: #EFF3FE;
+  border-radius: 5px;
+  transition: width 5s ease-in-out;
+}
+#progressBar {
+  width: 266px;
+  height: 7px;
+  background: rgba(146, 168, 228, 0.25);
+border-radius: 10px;
+  position: relative;
+}
+#fill {
+  height: 100%;
+  background-color: #577BEC;
+  width: 0%;
+  transition: width .1s linear;
+  border-radius: 10px;
+}
+.drop-files{
+  margin-top: 28px;
+}
+.drop-files .drop{
+  margin-top: 20px;
+}
+.drop-files .drop, .drop-files .drop p{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.drop-files .drop p{
+  font-size: 1.6rem;
+}
+.drop-files .drop p img{
+  margin-right: 3px;
+}
+.drop-files .drop p span{
+  color: #9D9D9D;
+  margin-left: 6px;
+}
+.drop-files .drop button, .load-progress .load-progress__close{
+  padding: 0;
+  border: none;
+  width: 12px;
+  height: 12px;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  margin-left: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.drop-files .drop button img{
+  min-width: 12px;
+  min-height: 12px;
+}
+.load-progress .load-progress__close{
+  position: absolute;
+  right: 9px;
+  top: 9px;
+}
+.load-progress .load-progress__file{
+  color: #577BEC;
+  font-size: 1.6rem;
+  margin-top: 9px;
+}

@@ -1,0 +1,8 @@
+@media(max-width:430px){
+    #drop-zone .load-start p {
+        font-size: 1.4rem;
+    }
+    .instruction .instruction-side a{
+        margin-left: 29px;
+    }
+}
